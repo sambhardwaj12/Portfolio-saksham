@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(45, 212, 191, 0.18), transparent 28%),
+    linear-gradient(180deg, #020617 0%, #0f172a 46%, #020617 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@layer base {
+  body {
+    @apply text-slate-100 antialiased;
+  }
+
+  a,
+  button {
+    @apply transition-all duration-300;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-20 sm:py-24;
+  }
+
+  .panel {
+    @apply rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_80px_-40px_rgba(34,211,238,0.35)] backdrop-blur;
+  }
+
+  .section-label {
+    @apply inline-flex items-center gap-2 rounded-full border border-teal-400/20 bg-teal-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-teal-200;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center rounded-full bg-teal-300 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-teal-500/20 hover:-translate-y-0.5 hover:bg-teal-200;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:-translate-y-0.5 hover:border-teal-300/50 hover:bg-white/10;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-slate-300 hover:text-white;
+  }
+
+  .fade-in {
+    animation: fadeInUp 0.8s ease-out both;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
