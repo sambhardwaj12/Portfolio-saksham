@@ -1,6 +1,10 @@
 import Container from './Container';
 
 function Hero({ profile }) {
+  const cvHref = profile.cta.secondaryHref.startsWith('/')
+    ? `${import.meta.env.BASE_URL}${profile.cta.secondaryHref.slice(1)}`
+    : profile.cta.secondaryHref;
+
   return (
     <section id="home" className="section-padding overflow-hidden pt-16 sm:pt-24">
       <Container>
@@ -18,7 +22,7 @@ function Hero({ profile }) {
                 {profile.cta.primaryLabel}
               </a>
               <a
-                href={profile.cta.secondaryHref}
+                href={cvHref}
                 className="secondary-button"
                 download
                 target="_blank"
